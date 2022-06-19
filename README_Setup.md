@@ -194,6 +194,17 @@ $ lerna add --scope=test-app -D reselect
 
 ---
 
+## ついでのライブラリ
+
+関係ないけど、`Three.js`を試してみたいので入れてみる。
+
+```shell
+$ lerna add --scope=test-app three
+$ lerna add --scope=test-app @types/three
+```
+
+---
+
 ## 不要ファイル削除
 
 今回のプロジェクトでは必須でない不要ファイルを削除する。`packages`ディレクトリ直下で作業。

@@ -1,17 +1,14 @@
-import { createStore } from "redux";
+import { createStore, compose, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+// Reducer
+import { rootReducer } from "../Reducers";
 
-export interface DataType {
-    count: number;
-}
+// ?
+const storeEnhancers =
+    (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const initialState: DataType = {
-    count: 1,
-};
-
-const reducer = (state = initialState) => {
-    return state;
-};
-
-const store = createStore(reducer);
-
-export default store;
+// Store
+export const store = createStore(
+    rootReducer,
+    storeEnhancers(applyMiddleware(thunk))
+);
