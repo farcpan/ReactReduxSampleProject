@@ -2,10 +2,11 @@ import { combineReducers } from "redux";
 // Reducers
 import { counterReducer, CounterReducerType } from "./counter";
 
+// 複数のReducerをまとめたデータ定義
 export interface RootReducerType {
-    counter: CounterReducerType;
+    counterReducer: CounterReducerType;
 }
 
 export const rootReducer = combineReducers<RootReducerType>({
-    counter: counterReducer,
+    counterReducer: counterReducer,
 });

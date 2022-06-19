@@ -3,7 +3,6 @@ import thunk from "redux-thunk";
 // Reducer
 import { rootReducer } from "../Reducers";
 
-// ?
 const storeEnhancers =
     (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

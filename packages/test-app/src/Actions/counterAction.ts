@@ -1,20 +1,35 @@
-export const CounterActionType = {
+// CounterAction メソッド定義
+export const CounterActionMethodType = {
     increment: "INCREMENT",
     decrement: "DECREMENT",
+    save: "SAVE",
 } as const;
-export type CounterActionType =
-    typeof CounterActionType[keyof typeof CounterActionType];
+export type CounterActionMethodType =
+    typeof CounterActionMethodType[keyof typeof CounterActionMethodType];
 
-export const increment = (value: number) => {
+//
+export interface CounterActionType {
+    type: CounterActionMethodType;
+    value: number;
+}
+
+export const increment = (value: number): CounterActionType => {
     return {
-        type: CounterActionType.increment,
+        type: CounterActionMethodType.increment,
         value: value,
     };
 };
 
-export const decrement = (value: number) => {
+export const decrement = (value: number): CounterActionType => {
     return {
-        type: CounterActionType.decrement,
+        type: CounterActionMethodType.decrement,
         value: value,
+    };
+};
+
+export const saveValue = (): CounterActionType => {
+    return {
+        type: CounterActionMethodType.save,
+        value: 0,
     };
 };

@@ -6,7 +6,7 @@ import { Button, Typography } from "@material-ui/core";
 import * as Three from "three";
 
 import { RootReducerType } from "../Reducers";
-import { increment, decrement } from "../Actions";
+import { increment, decrement, saveValue } from "../Actions";
 
 const useStyles = makeStyles(() => ({
     root: {},
@@ -67,7 +67,7 @@ export const SamplePage = () => {
     };
 
     const count = useSelector((state: RootReducerType) => {
-        return state.counter.count;
+        return state.counterReducer.count;
     });
 
     const dispatch = useDispatch();
@@ -77,6 +77,9 @@ export const SamplePage = () => {
     };
     const minus = () => {
         dispatch(decrement(5));
+    };
+    const save = () => {
+        dispatch(saveValue());
     };
 
     return (
@@ -91,6 +94,8 @@ export const SamplePage = () => {
 
             <Button onClick={plus}>+</Button>
             <Button onClick={minus}>-</Button>
+
+            <Button onClick={save}>Save</Button>
         </>
     );
 };
