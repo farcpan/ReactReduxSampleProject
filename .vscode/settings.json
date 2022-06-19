@@ -1,4 +1,10 @@
 {
+    "files.eol": "\n",
     "editor.formatOnSave": true,
-    "prettier.tabWidth": 4
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

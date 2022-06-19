@@ -132,6 +132,8 @@ $ lerna run start
 -   `Command+Shift+P`で VSCode のコマンドパレットを開き、`preference workspace`で検索して、設定ページを開く
 -   `formatsave`で検索し、`Editor: Format On Save`にチェックを入れて設定を有効化する
     -   上記設定は、`.vscode/settings.json`に反映される
+-   同様にコマンドパレット内で`default formatter`で検索し、`Editor: Default Formatter`に`Prettier`を設定する
+-   プロジェクト直下に`.prettierrc`を作成し、設定を記述する。設定内容については当該ファイル参照
 
 ---
 
@@ -168,10 +170,12 @@ $ lerna add --scope=test-app -D connected-react-router
 $ lerna add --scope=test-app -D history@4.10.1
 ```
 
+`Switch`や exact オプションを使いたいので、`react-router`および`react-router-dom`には v6 ではなく v5 を使用する。
+
 ```shell
-$ lerna add --scope=test-app -D react-router
+$ lerna add --scope=test-app -D react-router@5
 $ lerna add --scope=test-app -D @types/react-router
-$ lerna add --scope=test-app -D react-router-dom
+$ lerna add --scope=test-app -D react-router-dom@5
 $ lerna add --scope=test-app -D @types/react-router-dom
 ```
 
